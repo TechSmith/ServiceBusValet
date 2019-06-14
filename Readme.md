@@ -1,6 +1,20 @@
 # Service Bus Valet #
 
-A WPF application used to inspect and reprocess Deadletter messages in Service Bus Topics / Subscriptions.
+The Service Bus Valet is a WPF application used to inspect and reprocess Deadletter messages in Service Bus Topics / Subscriptions.
+
+## Deadletter Processing Demonstration ##
+
+[![Watch the video](Deadletter-Processing-Demo.png)](https://www.screencast.com/t/Ve8vL2EDydd)
+
+## Frequently Asked Questions ##
+
+Q: Why is this utility called Service Bus Valet?
+
+A: In the U.S. a valet can be a person who parks cars for guests at a hotel, restaurant, etc. The Service Bus Valet moves your messages for you.
+
+Q: Why would I use this over Service Bus Explorer?
+
+A: We have found that while Service Bus Explorer has a greater number of features, it is difficult to reprocess large batches of deadletter messages.
 
 ## Known Issues ##
 
@@ -8,9 +22,25 @@ A WPF application used to inspect and reprocess Deadletter messages in Service B
 - Re-sending messages is done through a background worker which means that the UI remains responsive. You can also stop the batch using the Stop menu if you decide to abort processing early. However the UI does not prevent you from starting a second batch of message processing while the first is in progress however this will not currently work and should not be attempted.
 - Using the Microsoft Service Bus SDK you cannot call GetBody on a BrokeredMessage more than once so the results must be cached the first time. This is the purpose of the message body dictionaries in models/cache folder. The messages bodies are stored in the dictionary by MessageId however I found out later that MessageIds are not required to be Unique so this may not always work. For our services the MessageId is a GUID so this will be acceptable.
 
-## NLog ##
+## Dependencies ##
+
+### NLog ###
 
 NLog is used with a custom target that will output messages in realtime to a WPF control. This provides status of batch processing jobs as they are in flight as well as any errors or exceptions. By adding additional targets to the NLog.config file it would be trivial to also output messages to a log file, sql database or any other target supported by NLog of which there are many: [https://github.com/nlog/nlog/wiki/Targets](https://github.com/nlog/nlog/wiki/Targets "NLog Targets")
+
+### CsvHelper ###
+
+<https://github.com/JoshClose/CsvHelper>
+
+### Costura.Fody ###
+
+<https://github.com/Fody/Costura>
+MIT License
+
+### NLog Viewer ###
+
+<https://github.com/erizet/NlogViewer>
+MIT License
 
 ## Code Organization ##
 
