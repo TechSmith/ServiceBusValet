@@ -1,6 +1,6 @@
 # Service Bus Valet #
 
-The Service Bus Valet is a WPF application used to inspect and reprocess Deadletter messages in Service Bus Topics / Subscriptions.
+The Service Bus Valet is a C# .NET, WPF application used to inspect and reprocess Deadletter messages in Service Bus Topics / Subscriptions.
 
 ## Deadletter Processing Demonstration ##
 
@@ -14,7 +14,7 @@ A: In the U.S. a valet can be a person who parks cars for guests at a hotel, res
 
 Q: Why would I use this over Service Bus Explorer?
 
-A: We have found that while Service Bus Explorer has a greater number of features, it is difficult to reprocess large batches of deadletter messages.
+A: TechSmith regularly uses this to reprocess n-thousands of messages, which can be difficult to do with Service Bus Explorer.
 
 ## Known Issues ##
 
@@ -24,23 +24,39 @@ A: We have found that while Service Bus Explorer has a greater number of feature
 
 ## Dependencies ##
 
+Dependencies are pulled in via NuGet packages and are used without modification unless otherwise noted.
+
 ### NLog ###
 
 NLog is used with a custom target that will output messages in realtime to a WPF control. This provides status of batch processing jobs as they are in flight as well as any errors or exceptions. By adding additional targets to the NLog.config file it would be trivial to also output messages to a log file, sql database or any other target supported by NLog of which there are many: [https://github.com/nlog/nlog/wiki/Targets](https://github.com/nlog/nlog/wiki/Targets "NLog Targets")
 
+- [Source Code](https://github.com/NLog/NLog)
+- [License BSD 3-Clause "New" or "Revised" License](https://github.com/NLog/NLog/blob/dev/LICENSE.txt)
+
 ### CsvHelper ###
 
-<https://github.com/JoshClose/CsvHelper>
+The CsvHelper NuGet package is used to read .csv file which contains configuration settings.
+
+- [Source Code](https://github.com/JoshClose/CsvHelper)
+- [Dual licensing under MS-PL and Apache 2.0](https://github.com/JoshClose/CsvHelper/blob/master/LICENSE.txt)
 
 ### Costura.Fody ###
 
-<https://github.com/Fody/Costura>
-MIT License
+The Costura add-in for Fody is used to embed dependencies as resources. This NuGet package allows us to combine .dlls into a single executable.
+
+- [Source Code](https://github.com/Fody/Costura)
+- [MIT License](https://github.com/Fody/Costura/blob/master/license.txt)
 
 ### NLog Viewer ###
 
-<https://github.com/erizet/NlogViewer>
-MIT License
+Nlog Viewer is a simple WPF control to show log messages.
+
+The NLogViewer control is responsible for displaying log messages in a realtime fashion. We use this to show progress and errors of any batch jobs that are processing.
+
+The control was custom modified so that it will auto scroll as new messages come in, thus keeping new messages always in view.
+
+- [Source Code](https://github.com/erizet/NlogViewer)
+- [MIT License](https://github.com/erizet/NlogViewer/blob/master/license.md)
 
 ## Code Organization ##
 
@@ -51,10 +67,6 @@ The purpose of the Controllers folder is to provide a controller for each XAML v
 ### Controls ###
 
 The Controls folder contains the modified source code for a custom WPF control called the NLogViewer. The original source can be found on Github: [https://github.com/erizet/NlogViewer](https://github.com/erizet/NlogViewer "NLogViewer")
-
-The NLogViewer control is responsible for displaying log messages in a realtime fashion. We use this to show progress and errors of any batch jobs that are processing.
-
-The control was custom modified so that it will auto scroll as new messages come in, thus keeping new messages always in view.
 
 ### Models ###
 
