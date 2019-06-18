@@ -8,6 +8,16 @@ The Service Bus Valet is a C# .NET, WPF application used to inspect and reproces
 
 ## Frequently Asked Questions ##
 
+Q: When I open the application for the first time it is asking me for an Environments file. What is this?
+
+A: This is a .csv file that has the connection strings for your environments. A sample file `EnvironmentConnectionStrings.csv` is included in the project root. Update it with a text editor with your connection strings. The connection string can be pulled directly from your Service Bus namespace in Azure Portal.
+
+``` csv
+"Environment","ConnectionString"
+"<YOUR_ENVIRONMENT_NAME_1>","Endpoint=sb://<INSERT_ENDPOINT_NAME>.servicebus.windows.net/;SharedAccessKeyName=<INSERT_KEY_NAME>;SharedAccessKey=<INSERT_SHARED_ACCESS_KEY>"
+"<YOUR_ENVIRONMENT_NAME_2>","Endpoint=sb://<INSERT_ENDPOINT_NAME>.servicebus.windows.net/;SharedAccessKeyName=<INSERT_KEY_NAME>;SharedAccessKey=<INSERT_SHARED_ACCESS_KEY>"
+```
+
 Q: Why is this utility called Service Bus Valet?
 
 A: In the U.S. a valet can be a person who parks cars for guests at a hotel, restaurant, etc. The Service Bus Valet moves your messages for you.
