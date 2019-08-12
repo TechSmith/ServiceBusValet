@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using CsvHelper;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
+using System.Text;
 
 namespace TechSmith.ServiceBusValet.Models
 {
@@ -11,8 +13,12 @@ namespace TechSmith.ServiceBusValet.Models
 
       public ServiceBusEnvironments( string path )
       {
-         var csvReader = new CsvReader( new StreamReader( path ) );
-         _connectionStrings = csvReader.GetRecords<EnvironmentConnectionString>().ToDictionary( e => e.Environment, e => e.ConnectionString );
+         string configurationJson = File.ReadAllText( path );
+         MemoryStream memoryStream = new MemoryStream( Encoding.UTF8.GetBytes( configurationJson ) );
+         DataContractJsonSerializer serializer = new DataContractJsonSerializer( typeof( Environments ) );
+         Environments environments = serializer.ReadObject( memoryStream ) as Environments;
+         memoryStream.Close();
+         _connectionStrings = environments.EnvironmentConnectionStrings.ToDictionary( e => e.Environment, e => e.ConnectionString );
       }
 
       public IEnumerable<string> GetNames()
@@ -22,19 +28,34 @@ namespace TechSmith.ServiceBusValet.Models
             yield return connectionString.Key;
          }
       }
-      
+
       public string GetConnectionString( string environmentName )
       {
          return _connectionStrings[environmentName];
       }
 
+      [DataContract]
+      private class Environments
+      {
+         [DataMember]
+         public List<EnvironmentConnectionString> EnvironmentConnectionStrings
+         {
+            get;
+            set;
+         }
+      }
+
+      [DataContract]
       private class EnvironmentConnectionString
       {
+         [DataMember]
          public string Environment
          {
             get;
             set;
          }
+
+         [DataMember]
          public string ConnectionString
          {
             get;

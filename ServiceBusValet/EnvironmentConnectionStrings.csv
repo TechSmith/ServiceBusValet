@@ -1,3 +1,0 @@
-﻿"Environment","ConnectionString"
-"Testing","Endpoint=sb://<INSERT_SERVICEBUS_NAME>.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=<INSERT_SHARED_SECRET>"
-"Custom","Enter a connection string here"

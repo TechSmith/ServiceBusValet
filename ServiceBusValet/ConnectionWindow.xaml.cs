@@ -34,8 +34,8 @@ namespace TechSmith.ServiceBusValet
       private void ButtonBrowse_Click( object sender, RoutedEventArgs e )
       {
          OpenFileDialog dlg = new OpenFileDialog();
-         dlg.DefaultExt = ".csv";
-         dlg.Filter = "CSV (Comma delimited) (*.csv)|*.csv";
+         dlg.DefaultExt = ".json";
+         dlg.Filter = "JSON (*.json)|*.json";
 
          bool? result = dlg.ShowDialog();
 
