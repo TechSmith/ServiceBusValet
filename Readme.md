@@ -14,12 +14,21 @@ The Service Bus Valet is a C# .NET, WPF application used to inspect and reproces
 
 Q: When I open the application for the first time it is asking me for an Environments file. What is this?
 
-A: This is a .csv file that has the connection strings for your environments. A sample file `EnvironmentConnectionStrings.csv` is included in the project root. Update it with a text editor with your connection strings. The connection string can be pulled directly from your Service Bus namespace in Azure Portal.
+A: This is a .json file that has the connection strings for your environments. A sample file `EnvironmentConnectionStrings.json` is included in the project root. Update it with a text editor with your connection strings. The connection string can be pulled directly from your Service Bus namespace in Azure Portal.
 
-``` csv
-"Environment","ConnectionString"
-"<YOUR_ENVIRONMENT_NAME_1>","Endpoint=sb://<INSERT_ENDPOINT_NAME>.servicebus.windows.net/;SharedAccessKeyName=<INSERT_KEY_NAME>;SharedAccessKey=<INSERT_SHARED_ACCESS_KEY>"
-"<YOUR_ENVIRONMENT_NAME_2>","Endpoint=sb://<INSERT_ENDPOINT_NAME>.servicebus.windows.net/;SharedAccessKeyName=<INSERT_KEY_NAME>;SharedAccessKey=<INSERT_SHARED_ACCESS_KEY>"
+``` json
+{
+   "EnvironmentConnectionStrings": [
+      {
+         "Environment": "<YOUR_ENVIRONMENT_NAME_1>",
+         "ConnectionString": "Endpoint=sb://<INSERT_SERVICEBUS_NAME>.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=<INSERT_SHARED_SECRET>"
+      },
+      {
+         "Environment": "<YOUR_ENVIRONMENT_NAME_2>",
+         "ConnectionString": "Endpoint=sb://<INSERT_SERVICEBUS_NAME>.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=<INSERT_SHARED_SECRET>"
+      }
+   ]
+}
 ```
 
 Q: Why is this utility called Service Bus Valet?
@@ -46,13 +55,6 @@ NLog is used with a custom target that will output messages in realtime to a WPF
 
 - [Source Code](https://github.com/NLog/NLog)
 - [License BSD 3-Clause "New" or "Revised" License](https://github.com/NLog/NLog/blob/dev/LICENSE.txt)
-
-### CsvHelper ###
-
-The CsvHelper NuGet package is used to read .csv file which contains configuration settings.
-
-- [Source Code](https://github.com/JoshClose/CsvHelper)
-- [Dual licensing under MS-PL and Apache 2.0](https://github.com/JoshClose/CsvHelper/blob/master/LICENSE.txt)
 
 ### Costura.Fody ###
 
