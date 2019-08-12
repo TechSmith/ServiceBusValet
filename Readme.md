@@ -2,6 +2,10 @@
 
 The Service Bus Valet is a C# .NET, WPF application used to inspect and reprocess Deadletter messages in Service Bus Topics / Subscriptions.
 
+## MIT License ##
+
+[MIT License Copyright (c) 2019 TechSmith](License.txt)
+
 ## Deadletter Processing Demonstration ##
 
 [![Watch the video](Deadletter-Processing-Demo.png)](https://www.screencast.com/t/Ve8vL2EDydd)
