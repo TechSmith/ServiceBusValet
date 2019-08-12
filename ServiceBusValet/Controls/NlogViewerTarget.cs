@@ -1,8 +1,8 @@
-﻿using NLog.Common;
+﻿using System;
+using NLog.Common;
 using NLog.Targets;
-using System;
 
-namespace NlogViewer
+namespace TechSmith.ServiceBusValet.Controls
 {
    [Target( "NlogViewer" )]
    public class NlogViewerTarget : Target

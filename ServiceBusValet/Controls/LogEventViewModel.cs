@@ -1,8 +1,8 @@
-﻿using NLog;
-using System;
+﻿using System;
 using System.Windows.Media;
+using NLog;
 
-namespace NlogViewer
+namespace TechSmith.ServiceBusValet.Controls
 {
    public class LogEventViewModel
    {

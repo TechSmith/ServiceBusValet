@@ -1,8 +1,8 @@
 ﻿using System.Windows;
 using Microsoft.Win32;
-using ServiceBusUtility.Controllers;
+using TechSmith.ServiceBusValet.Controllers;
 
-namespace ServiceBusUtility
+namespace TechSmith.ServiceBusValet
 {
    public partial class ConnectionWindow : Window
    {

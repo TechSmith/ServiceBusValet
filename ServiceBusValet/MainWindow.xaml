@@ -1,7 +1,7 @@
-﻿<Window x:Name="WindowMain" x:Class="ServiceBusUtility.MainWindow"
+﻿<Window x:Name="WindowMain" x:Class="TechSmith.ServiceBusValet.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:nlogViewer="clr-namespace:NlogViewer"
+        xmlns:controls="clr-namespace:TechSmith.ServiceBusValet.Controls"
         Title="Service Bus Valet" Height="600" Width="1000" Loaded="WindowMain_Loaded">
     <Grid>
         <Grid.RowDefinitions>
@@ -56,6 +56,6 @@
             </Grid>
         </Grid>
         <GridSplitter Grid.Row="3" Height ="5" HorizontalAlignment="Stretch" ResizeDirection="Rows"/>
-        <nlogViewer:NlogViewer Grid.Row="4" x:Name="LogCtrl" />
+        <controls:NlogViewer Grid.Row="4" x:Name="LogCtrl" />
     </Grid>
 </Window>

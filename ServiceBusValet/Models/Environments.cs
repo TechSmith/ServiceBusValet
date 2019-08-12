@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using CsvHelper;
 
-namespace ServiceBusUtility.Models
+namespace TechSmith.ServiceBusValet.Models
 {
    public class ServiceBusEnvironments
    {

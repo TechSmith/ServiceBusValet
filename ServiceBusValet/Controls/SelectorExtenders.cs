@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace NLogViewer
+namespace TechSmith.ServiceBusValet.Controls
 {
    public class SelectorExtenders : DependencyObject
    {

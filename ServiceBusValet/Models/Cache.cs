@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.ServiceBus.Messaging;
 
-namespace ServiceBusUtility.Models
+namespace TechSmith.ServiceBusValet.Models
 {
    public static class Cache
    {

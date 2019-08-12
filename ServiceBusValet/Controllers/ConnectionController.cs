@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Windows;
 using Microsoft.ServiceBus.Messaging;
-using ServiceBusUtility.Models;
-using ServiceBusUtility.Services;
-using ServiceBusUtility.ViewModels;
+using TechSmith.ServiceBusValet.Models;
+using TechSmith.ServiceBusValet.Services;
+using TechSmith.ServiceBusValet.ViewModels;
 
-namespace ServiceBusUtility.Controllers
+namespace TechSmith.ServiceBusValet.Controllers
 {
    public class ConnectionController
    {

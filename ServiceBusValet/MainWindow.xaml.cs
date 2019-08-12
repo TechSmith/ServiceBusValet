@@ -1,9 +1,9 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using ServiceBusUtility.Controllers;
-using ServiceBusUtility.Models;
+using TechSmith.ServiceBusValet.Controllers;
+using TechSmith.ServiceBusValet.Models;
 
-namespace ServiceBusUtility
+namespace TechSmith.ServiceBusValet
 {
    public partial class MainWindow : Window
    {

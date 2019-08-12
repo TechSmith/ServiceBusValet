@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using Microsoft.ServiceBus.Messaging;
 
-namespace ServiceBusUtility.Models
+namespace TechSmith.ServiceBusValet.Models
 {
    public class MessageProperty
    {

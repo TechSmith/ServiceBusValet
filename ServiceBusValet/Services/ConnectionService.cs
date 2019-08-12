@@ -2,7 +2,7 @@
 using Microsoft.ServiceBus;
 using Microsoft.ServiceBus.Messaging;
 
-namespace ServiceBusUtility.Services
+namespace TechSmith.ServiceBusValet.Services
 {
    public class ConnectionService
    {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 
-namespace ServiceBusUtility.ViewModels
+namespace TechSmith.ServiceBusValet.ViewModels
 {
    public class ConnectionViewModel
    {

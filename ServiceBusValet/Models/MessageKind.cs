@@ -1,4 +1,4 @@
-﻿namespace ServiceBusUtility.Models
+﻿namespace TechSmith.ServiceBusValet.Models
 {
    public enum MessageKind
    {

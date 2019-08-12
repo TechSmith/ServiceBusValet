@@ -3,7 +3,7 @@ using Microsoft.ServiceBus;
 using Microsoft.ServiceBus.Messaging;
 using NLog;
 
-namespace ServiceBusUtility.Services
+namespace TechSmith.ServiceBusValet.Services
 {
    public class TopicService
    {

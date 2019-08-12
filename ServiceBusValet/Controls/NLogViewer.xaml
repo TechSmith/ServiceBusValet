@@ -1,16 +1,16 @@
-﻿<UserControl x:Class="NlogViewer.NlogViewer"
+﻿<UserControl x:Class="TechSmith.ServiceBusValet.Controls.NlogViewer"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:nLogViewer="clr-namespace:NLogViewer"
+             xmlns:controls="clr-namespace:TechSmith.ServiceBusValet.Controls"
              mc:Ignorable="d"
              d:DesignHeight="230" d:DesignWidth="457"
              DataContext="{Binding RelativeSource={RelativeSource Self}}">
     <UserControl.Resources>
     </UserControl.Resources>
     <Grid>
-        <ListView ItemsSource="{Binding LogEntries}" Name="logView" nLogViewer:SelectorExtenders.IsAutoscroll="True">
+        <ListView ItemsSource="{Binding LogEntries}" Name="logView" controls:SelectorExtenders.IsAutoscroll="True">
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="ToolTip" Value="{Binding ToolTip}" />

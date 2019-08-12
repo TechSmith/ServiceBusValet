@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Controls;
 
-namespace NlogViewer
+namespace TechSmith.ServiceBusValet.Controls
 {
    public partial class NlogViewer : UserControl
    {

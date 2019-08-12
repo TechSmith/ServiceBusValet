@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
-using ServiceBusUtility.Models;
+using TechSmith.ServiceBusValet.Models;
 
-namespace ServiceBusUtility.ViewModels
+namespace TechSmith.ServiceBusValet.ViewModels
 {
    public class MainWindowViewModel
    {
