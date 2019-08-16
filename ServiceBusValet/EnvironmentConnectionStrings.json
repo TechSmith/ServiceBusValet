@@ -1,0 +1,12 @@
+﻿{
+   "EnvironmentConnectionStrings": [
+      {
+         "Environment": "<INSERT_ENVIRONMENT_NAME>",
+         "ConnectionString": "Endpoint=sb://<INSERT_SERVICEBUS_NAME>.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=<INSERT_SHARED_SECRET>"
+      },
+      {
+         "Environment": "TEST",
+         "ConnectionString": "Endpoint=sb://<INSERT_SERVICEBUS_NAME>.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=<INSERT_SHARED_SECRET>"
+      }
+   ]
+}
